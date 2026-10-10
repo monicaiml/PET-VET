@@ -1,0 +1,99 @@
+
+
+@startuml
+top to bottom direction
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor white
+  ArrowColor black
+  BorderColor black
+}
+
+' =====================
+' INTERFAZ
+' =====================
+interface IPagable {
+  "+ calcularPrecio(): double"
+}
+
+' =====================
+' CLASE ABSTRACTA
+' =====================
+abstract class Persona {
+  "- nombre: String"
+  "- apellido: String"
+  "- dni: String"
+
+  "+ Persona(nombre, apellido, dni)"
+  "+ getNombre(): String"
+}
+
+' =====================
+' CLASES
+' =====================
+
+class Cliente {
+  "- telefono: String"
+
+  "+ Cliente(nombre, apellido, dni, telefono)"
+  "+ getTelefono(): String"
+}
+
+class Veterinario {
+  "- especialidad: String"
+
+  "+ Veterinario(nombre, apellido, dni, especialidad)"
+  "+ atenderCita(c: Cita)"
+  "+ getEspecialidad(): String"
+}
+
+class Animal {
+  "- nombre: String"
+  "- especie: String"
+  "- raza: String"
+
+  "+ Animal(nombre, especie, raza)"
+  "+ mostrarInfo(): String"
+}
+
+class Cita {
+  "- fecha: String"
+  "- hora: String"
+
+  "+ Cita(fecha, hora)"
+  "+ programar()"
+  "+ cancelar()"
+}
+
+class Factura {
+  "- importe: double"
+
+  "+ Factura(importe)"
+  "+ calcularPrecio(): double"
+  "+ getImporte(): double"
+}
+
+' =====================
+' HERENCIA
+' =====================
+Persona <|-- Cliente
+Persona <|-- Veterinario
+
+' =====================
+' AGREGACIÓN
+' =====================
+Cliente "1" o-- "0..*" Animal : posee
+
+' =====================
+' RELACIONES
+' =====================
+Cliente "1" -- "0..*" Cita : solicita
+Veterinario "1" -- "0..*" Cita : atiende
+Cita "1" *-- "1" Factura : genera
+
+' =====================
+' INTERFAZ
+' =====================
+Factura ..|> IPagable
+
+@enduml

@@ -1,0 +1,6 @@
+
+# Archivos compilados de Java
+**/*.class
+
+# Credenciales de la base de datos
+**/db.properties

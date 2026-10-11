@@ -2,7 +2,7 @@
 
 ## 📋 Descripción
 
-PET-VET es un proyecto de gestión para una clínica veterinaria, desarrollado como parte de mi formación en Desarrollo de Aplicaciones Web (DAW).
+PET-VET es un proyecto de gestión para una clínica veterinaria.
 
 El objetivo es organizar la información de clientes y facilitar la gestión de los datos mediante una aplicación conectada a una base de datos.
 
@@ -33,4 +33,4 @@ El proyecto se encuentra en desarrollo. Se irá ampliando y mejorando a medida q
 
 ## 👩‍💻 Autora
 
-Proyecto personal realizado durante el ciclo formativo de Desarrollo de Aplicaciones Web (DAW).
+Proyecto personal 

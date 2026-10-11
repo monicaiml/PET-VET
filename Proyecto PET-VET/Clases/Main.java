@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("Carpeta de trabajo: " + System.getProperty("user.dir"));
         Properties config = new Properties();
 
         try (FileInputStream input = new FileInputStream("db.properties")) {
